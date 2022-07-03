@@ -1,6 +1,45 @@
 <!doctype HTML>
-<head>
-</head>
-<body>
-    <p>calc</p>
-</body>
+<html lang="hr-HR">
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
+    </head>
+    <body>
+        <div class="formCenter">
+            <form action="/url" method="GET" id="formaCalc">
+                <div class="divCalc">
+                    <label class="spanCalc">Ukupan iznos za naplatu:</label>
+                    <input type="text" pattern="^\d+\.\d{0,2}$" id="ukupno" onchange=konverzijaUku() step="0,01" value='0,00' placeholder='0,00' class="input">
+                    <label class="valuta">EUR</label>
+                    <input type="text" name="ukupno" id="ukupnord" readonly step='0,01' value='0,00' placeholder='0,00' class="inputrd">
+                    <label class="valuta">KN</label>
+                </div>
+                
+                <div class="divCalc">
+                    <label class="spanCalc">Zaprimljen iznos u kunama:</label>
+                    <input type="text" id="kunerd" readonly step='0,01' value='0,00' placeholder='0,00' class="inputrd">
+                    <label class="valuta">EUR</label>
+                    <input type="text" name="kune" id="kune" onchange=konverzijaKn() step='0,01' value='0,00' placeholder='0,00' class="input">
+                    <label class="valuta">KN</label>
+                </div>
+                
+                <div class="divCalc">
+                    <label class="spanCalc">Zaprimljen iznos u eurima:</label>
+                    <input type="text" id="euri" onchange=konverzijaEur() step='0,01' value='0,00' placeholder='0,00' class="input">
+                    <label class="valuta">EUR</label>
+                    <input type="text" name="eur" id="eurird" readonly step='0,01' value='0,00' placeholder='0,00' class="inputrd">
+                    <label class="valuta">KN</label>
+                </div>
+                
+                <div class="divCalc">
+                    <label class="spanCalc">Ukupno za vratiti:</label>
+                    <input type="text" id="vratird" readonly step='0,01' value='0,00' placeholder='0,00' class="inputrd">
+                    <label class="valuta">EUR</label>
+                    <input type="text" name="vrati" id="vratiknrd" readonly step='0,01' value='0,00' placeholder='0,00' class="inputrd">
+                    <label class="valuta">KN</label>
+                </div>
+
+            </form>
+        </div>
+        <script src="js/izracun.js"></script>
+    </body>
+</html>
