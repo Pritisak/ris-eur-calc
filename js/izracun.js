@@ -1,4 +1,4 @@
-const tecaj = 7.5;
+const tecaj = 7.53450;
 let tekst = '';
 let zamjena = '';
 let ukupno = 0;
